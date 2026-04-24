@@ -4,6 +4,7 @@ package com.Fitness.Application.Model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Entity
 public class Activity {
@@ -19,6 +20,9 @@ public class Activity {
 
     @Enumerated(EnumType.STRING)
     private ActivityType type;
+
+    @Column(columnDefinition = "json")
+     private Map<String,Object> additionalMetrics;
 
     private Integer caloriesBurned;
     private LocalDateTime startTime;
